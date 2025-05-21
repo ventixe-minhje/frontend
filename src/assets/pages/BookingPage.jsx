@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const BookingEvent = () => {
-    const {navigate} = useNavigate()
+    const navigate = useNavigate()
     const {id} = useParams()
     const [event, setEvent] = useState({})
-    const [formData, setFormData] = useState({ eventId: id, firstName: '', lastName: '', email: '', streetName: '', postalCode: '', city: '' })
+    const [formData, setFormData] = useState({ eventId: id, firstName: '', lastName: '', email: '', streetName: '', postalCode: '', city: '', ticketQuantity: 1 })
     
     useEffect(() => {
         getEvent()
@@ -22,11 +22,17 @@ const BookingEvent = () => {
                 console.error(err)
             } 
         }
-    
 
-    const postBooking = async () => {
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setFormData(prev => ({ ...prev, [name]: value }))
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
         try {
-            const res = await fetch(`https://mh-bookingservice-a7edfverf8f8cvd8.swedencentral-01.azurewebsites.net/api/bookings`, {
+            const res = await fetch(`https://mh-bookingservice-gra5adfcdyezdqbw.swedencentral-01.azurewebsites.net/api/bookings`, {
                 method: 'POST',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -43,16 +49,6 @@ const BookingEvent = () => {
         catch (err) {
             console.error("Error submitting", err)
         }
-    }
-
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setFormData(prev => ({ ...prev, [name]: value }))
-    }
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        await postBooking()
     }
 
   return (

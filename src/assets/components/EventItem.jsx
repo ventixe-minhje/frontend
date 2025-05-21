@@ -20,13 +20,14 @@ const formatDateToReadable = (dateString) => {
 
 const EventItem = ({item}) => {
   return (
-    <Link to={`/events/${item.id}`}>
+    <Link id='event-link' to={`/events/${item.id}`}>
         <div className='event-card'>
             <div className='event-image'>{item.image}</div>
             <div className='event-info'>
                <div className='event-date'>{formatDateToReadable(item.eventDate)}</div>
               <div className='event-title'>{item.title}</div>
               <div className='event-location'><i className="fa-solid fa-location-dot"></i>{item.location}</div>
+              <div className='event-price'>$70</div>
             </div>
         </div>
     </Link>

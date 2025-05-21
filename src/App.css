@@ -169,6 +169,12 @@ footer {
   }
 }
 
+#event-link {
+  display: flex;
+   height: 346px;
+  width: 280px;
+}
+
 .event-card {
   background-color: var(--gray-10);
   height: 346px;
@@ -193,19 +199,19 @@ footer {
   }
 
   .event-title {
-    text-decoration: none;
+    /* text-decoration: none; */
     color: var(--gray-100);
     font-weight: var(--semibold);
   }
 
   .event-date {
-    text-decoration: none;
+    /* text-decoration: none; */
     color: var(--gray-70);
     font-size: 11px;
   }
 
   .event-location {
-    text-decoration: none;
+    /* text-decoration: none; */
     color: var(--gray-80);
     font-size: 11px;
 
@@ -213,4 +219,11 @@ footer {
       margin-right: 0.3rem;
     }
   }
+
+    .event-price {
+      display: flex;
+      font-weight: var(--semibold);
+      justify-content: center;
+      color: var(--primary-100);
+    }
 }

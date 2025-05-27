@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import Header from '../components/Header'
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
+import TermsAndConditions from '../components/TermsAndConditions'
 
 const EventDetailsPage = () => {
     const {id} = useParams()
@@ -31,20 +35,55 @@ const EventDetailsPage = () => {
     hour: 'numeric',
     hour12: true,
     });
-    
+
   return `${formattedDate} - ${formattedTime}`;
 };
 
     return (
-        <div className="event-details">
-            <div className='details-event-image'>{event.image}</div>
-            <h1>{event.title}</h1>
-            <div className='details-event-date'>{event.eventDate && formatDateToReadable(event.eventDate)}</div>
-            <div className='details-event-title'>{event.title}</div>
-            <div className='details-event-location'><i className="fa-solid fa-location-dot"></i>{event.location}</div>
-            <Link to={`/events/bookning/${id}`}>Book Event</Link>
-        </div>
-    )
+       <div className='portal-wrapper'>
+        <Header />
+        <Nav />
+        <main>
+            <section className='event-details-page'>
+                <div className='event-details-card'>
+                    <div className='event-details-image'>{event.image}</div>
+                    <h1 className='event-details-title'>{event.title}</h1>
+
+                <div className="event-details-info">
+                    <div className='event-details-date'><i class="fa-solid fa-calendar"></i>{event.eventDate && formatDateToReadable(event.eventDate)}</div>
+                    <div className='event-details-location'><i className="fa-solid fa-location-dot"></i>{event.location}</div>
+                    <div className='event-details-price'>$70</div>
+                </div>
+
+                <div className='about-event'>
+                    <div className='divider'></div> 
+                    <h5>About Event</h5>
+                    <div className='event-details-description'>{event.description}</div>
+                </div>
+                </div>
+            
+            <div className='event-packages'>
+                <h4>Packages</h4>
+
+                <div className='package'>
+                  <h4 className='package-title'>Standard Package</h4>
+                    <div className='package-info'>
+                        <p><i className="fa-solid fa-circle-check"></i>Seating</p>
+                        <p><i className="fa-solid fa-circle-check"></i>Prime View</p> 
+                    </div>
+                </div>
+                <Link className='booking-btn' to={`/events/bookning/${id}`}>Book Event</Link>
+            </div>
+
+            <TermsAndConditions />
+            
+
+        </section>
+        </main>
+        <Footer />
+    </div>
+        
+        )
 }
 
 export default EventDetailsPage

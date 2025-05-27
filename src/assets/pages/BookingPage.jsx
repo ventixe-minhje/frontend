@@ -52,36 +52,38 @@ const BookingEvent = () => {
     }
 
   return (
-    <div>
+    <section className='booking-page center-wrapper'>
+    <div className='booking-form'>
         <h1>Book Event - {event.title}</h1>
         <form onSubmit={handleSubmit} noValidate>
-            <div>
+            <div className='form-input'>
                 <label>First Name</label>
                 <input type='text' name='firstName' value={formData.firstName} onChange={handleChange} required/>
             </div>
-            <div>
+            <div className='form-input'>
                 <label>Last Name</label>
                 <input type='text' name='lastName' value={formData.lastName} onChange={handleChange} required/>
             </div>
-            <div>
+            <div className='form-input'>
                 <label>Email</label>
                 <input type='email' name='email' value={formData.email} onChange={handleChange} required/>
             </div>
-            <div>
+            <div className='form-input'>
                 <label>Street Name</label>
                 <input type='text' name='streetName' value={formData.streetName} onChange={handleChange} required/>
             </div>
-            <div>
+            <div className='form-input'>
                 <label>Postal Code</label>
                 <input type='text' name='postalCode' value={formData.postalCode} onChange={handleChange} required/>
             </div>
-             <div>
+            <div className='form-input'>
                 <label>City</label>
                 <input type='text' name='city' value={formData.city} onChange={handleChange} required/>
             </div>
-            <button type='submit'>Book now</button>
+            <button className='btn-submit' type='submit'>Book now</button>
         </form>
     </div>
+    </section>
   )
 }
 

@@ -11,7 +11,7 @@ const Header = () => {
         return 'Events';
       case '/booking':
         return 'booking';
-      case '/events':
+      case '/events/':
         return 'Events';
       default:
         return 'Ventixe';

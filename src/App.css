@@ -142,8 +142,9 @@ footer {
   grid-area: logo;
   display: flex;
   flex-direction: row;
+  gap: 1rem;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 .navlinks {
@@ -353,7 +354,7 @@ footer {
       .booking-btn {
         width: 100%;
         padding: 1rem;
-        background-color: var(--primary-100);
+        background-color: var(--primary-90);
         color: var(--text-color);
         text-align: center;
         border-radius: 12px;
@@ -430,7 +431,7 @@ footer {
     }
 
     .btn-submit {
-      background-color: var(--primary-100);
+      background-color: var(--primary-90);
       border-radius: 1rem;
       border: none;
       color: var(--text-color);

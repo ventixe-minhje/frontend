@@ -50,7 +50,7 @@ const EventDetailsPage = () => {
                     <h1 className='event-details-title'>{event.title}</h1>
 
                 <div className="event-details-info">
-                    <div className='event-details-date'><i class="fa-solid fa-calendar"></i>{event.eventDate && formatDateToReadable(event.eventDate)}</div>
+                    <div className='event-details-date'><i className="fa-solid fa-calendar"></i>{event.eventDate && formatDateToReadable(event.eventDate)}</div>
                     <div className='event-details-location'><i className="fa-solid fa-location-dot"></i>{event.location}</div>
                     <div className='event-details-price'>$70</div>
                 </div>
@@ -72,12 +72,11 @@ const EventDetailsPage = () => {
                         <p><i className="fa-solid fa-circle-check"></i>Prime View</p> 
                     </div>
                 </div>
-                <Link className='booking-btn' to={`/events/bookning/${id}`}>Book Event</Link>
+                <Link className='booking-btn' to={`/booking/${id}`}>Book Event</Link>
             </div>
 
             <TermsAndConditions />
             
-
         </section>
         </main>
         <Footer />

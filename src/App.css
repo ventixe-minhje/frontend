@@ -106,9 +106,16 @@ nav {
 
 header {
   grid-area: header;  
+  display: flex;
+  align-items: center;
   background-color: var(--header-background-color);
   border-radius: 1rem;
   padding: 0 3rem;
+
+  a {
+    color: var(--secondary-100);
+    margin-right: 1rem;
+  }
 }
 
 main {
@@ -354,10 +361,10 @@ footer {
       .booking-btn {
         width: 100%;
         padding: 1rem;
-        background-color: var(--primary-90);
+        background-color: var(--primary-100);
         color: var(--text-color);
         text-align: center;
-        border-radius: 12px;
+        border-radius: 1.8rem;
       }
     }
 
@@ -385,10 +392,12 @@ footer {
   }
 
   .booking-page {
-    background-color: var(--background-color);
+    align-items: center;
+    justify-content: center;
+
 
     .booking-form {
-      background-color: var(--gray-20);
+      background-color: var(--background-color);
       padding: 1rem;
       border-radius: 1rem;
     }
@@ -416,23 +425,23 @@ footer {
     }
 
     input {
-      background-color: var(--primary-50);
+      background-color: var(--secondary-50);
       border-radius: 1rem;
       border: none;
       color: var(--text-color);
       font-family: Inter;
       font-size: 1rem;
-      padding: 0.5rem;
+      padding: 0.5rem 1rem;
 
         &:focus {
           outline: none;
-          border: 1px solid var(--gray-80);
+          border: 1px solid var(--secondary-100);
         }
     }
 
     .btn-submit {
-      background-color: var(--primary-90);
-      border-radius: 1rem;
+      background-color: var(--primary-100);
+      border-radius: 1.8rem;
       border: none;
       color: var(--text-color);
       font-family: Inter;
@@ -442,7 +451,7 @@ footer {
 
         &:focus {
         outline: none;
-        border: 1px solid var(--gray-80);
+        border: 1px solid var(--secondary-100);
       } 
     }
   }

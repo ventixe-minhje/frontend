@@ -4,8 +4,7 @@ import { NavLink } from 'react-router-dom'
 const Navlinks = () => {
   return (
     <div className="navlinks">
-        <NavLink className="navlink" to={`/booking`}><i className="fa-regular fa-square-check"></i> Booking </NavLink>
-        <NavLink className="navlink" to={`/events`}><i className="fa-solid fa-ticket"></i> Events </NavLink>
+        <NavLink className="navlink" to={`/`}><i className="fa-solid fa-ticket"></i> Events </NavLink>
     </div>
   )
 }

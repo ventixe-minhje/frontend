@@ -185,6 +185,11 @@ footer {
   flex-direction: column;
   gap: 1.2rem;
   align-items: center;
+  
+  @media (min-width: 760px) {
+    align-self: flex-start;
+    align-items: flex-start;
+  }
 }
 
 .navlink {
@@ -193,7 +198,7 @@ footer {
   display: none;
   gap: 0.5rem;
   align-items: center;
-  justify-content: start;
+  margin-top: 1rem;
   
   &:hover {
     cursor: pointer;
@@ -218,6 +223,7 @@ footer {
   background-color: var(--primary-100);
   border-radius: 50%;
   color: white;
+  margin-top: 3rem;
 
   @media (min-width:760px) {
     display: flex;
@@ -285,19 +291,23 @@ footer {
 
 #events {
   display: grid;
-  gap: 0.5rem;
+  gap: 1rem;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(1, 1fr);
+  width: max-content;
+  margin: 0 auto;
 
    @media (min-width: 760px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+
    }
 
     @media (min-width: 1140px) {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
   }  
+   @media (min-width: 2000px) {
+    grid-template-columns: repeat(6, 1fr);
+  }     
 }
 
 .event-card {
@@ -505,6 +515,13 @@ footer {
       background-color: var(--background-color);
       padding: 1rem;
       border-radius: 1rem;
+      width: 100%;
+      margin: 0 auto;
+
+      
+      @media (min-width: 760px) {
+        width: 500px;
+      }
     }
     
     h1 {
@@ -519,28 +536,46 @@ footer {
 
     .form-input {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+
+      
+      @media (min-width: 760px) {
+        justify-content: left;
+        justify-content: space-between;
+      }
     }
 
     label {
-      color: var(--text-color);
-      font-family: Inter;
-      font-size: 1rem;
-      padding: 0.5rem;
+      display: none;
+      
+      @media (min-width: 760px) {
+        display: flex;
+        color: var(--text-color);
+        font-family: Inter;
+        font-size: 1rem;
+        padding: 0.5rem;
+      }
     }
 
     input {
-      background-color: var(--secondary-50);
+      background-color: var(--background-color);
       border-radius: 1rem;
-      border: none;
+      border: 1px solid var(--secondary-110);
       color: var(--text-color);
       font-family: Inter;
       font-size: 1rem;
       padding: 0.5rem 1rem;
+      height: 2.5rem;
 
         &:focus {
           outline: none;
           border: 1px solid var(--secondary-100);
+        }
+
+        @media (min-width: 760px) {
+          &::placeholder {
+            color: transparent;
+          }
         }
     }
 
@@ -551,6 +586,7 @@ footer {
       color: var(--text-color);
       font-family: Inter;
       font-size: 1rem;
+      font-weight: normal;
       padding: 0.5rem;
       margin-top: 3rem;
 

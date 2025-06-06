@@ -9,7 +9,7 @@ const Logotype = () => {
       <h2>Ventixe</h2>
       </div>
 
-      <div className="logotype-mobile"> 
+      <div className="logotype-tablet"> 
       <img src={VentixeLogo} alt="Ventixe logotype" />
       </div>
     </>
